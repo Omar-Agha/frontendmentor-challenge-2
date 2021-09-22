@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+    font: 15px;
+    --mainBgColor: hsl(233, 47%, 7%);
+    --cardBgColor: hsl(244, 38%, 16%);
+    --accentColor: hsl(277, 64%, 61%);
+
+    --mainHeadingColor: hsl(0, 0%, 100%);
+    --mainaPragraphColor: hsla(0, 0%, 100%, 0.75);
+    --statHeadings: hsla(0, 0%, 100%, 0.6);
+}
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: inter;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--mainBgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: var(--mainHeadingColor);
+}
+p{
+    color: var(--mainaPragraphColor);
+}
+
+.card{
+    /* min-width: 600px; */
+    z-index: 1;
+    display: flex;
+    margin: 1em;
+    flex-direction: row-reverse;
+    background-color: var(--cardBgColor);
+    border-radius: 10px;;
+    overflow: hidden;
+
+}
+
+.card .bg-img {
+    min-height: 10em;
+    width: 540px;
+    min-width: 200px;
+    background-image: url(../images/image-header-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    /* flex: 1; */
+}
+.bg-img .overlay{
+    height: 100%;
+    background-color: var(--accentColor);
+    mix-blend-mode: soft-light;
+}
+
+.content{
+    /* flex: 1; */
+    /* width: 200px; */
+    padding: 2em 2em 2em 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card .content .description{
+    margin-bottom: 1.2em;
+}
+
+.content h1{
+    margin-bottom: 1.2em;
+}
+.content h1 span{
+    color: var(--accentColor);
+}
+
+
+.content .statics-section{
+    margin-top: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+}
+/* for mobile */
+@media only screen and (max-width:600px) {
+    
+    .card{
+        flex-direction: column;
+        overflow: auto;
+        width:300px
+        
+    }
+
+    :root{
+        font-size: 14px;
+    }
+
+    .card .bg-img{
+        background-image: url(../images/image-header-mobile.jpg);
+        height: 220px;
+        width: 300px;
+
+    }
+
+    .card .statics-section{
+        flex-direction: column;
+    }
+    .card .statics-section .wrapper{
+        margin-bottom: 1.3em;
+    }
+    
+}
+
+
+@media (min-width:601px)and (max-width:800px){
+    :root{
+        font-size: 13px;
+    }
+}
+
+@media (min-width:1024px) {
+    .card{
+        width: 70%;
+    }
+    .card .content{
+        
+        padding:5rem
+        
+    }
+    .card .bg-img{
+        width:900px;
+        
+    }
+
+}
